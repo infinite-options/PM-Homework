@@ -11,7 +11,7 @@ console.log("in weatherscript - second line.js");
 import weatherCard from "./components/weathercard.js";
 
 console.log("in weatherscript - first line.js");
-import settings from "../settings.js";
+import settings from "./settings.js";
 
 console.log("in weatherscript.js");
 
