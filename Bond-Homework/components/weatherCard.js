@@ -15,14 +15,15 @@ const weatherCard = (data) => {
 
   return `
     <article class="weathercard">
+          <link href="loader.css" rel="stylesheet" />
+          <span class="loader hidden"> </span>
+          <button id="load">Load content</button>
           <div class="weathercard__meta">
             <div class="weathercard__meta-location">${data.name}, ${data.sys.country}</div>
           </div>
-
           <div class="weathercard__temp">
             <span class="temp">${tempTranslator(data.main.temp).c.toFixed(1)}</span><span class="tempunit">°C</span>
           </div>
-
           <div class="weathercard__wind">
             <div class="weathercard__wind-speed">
               <span class="speed">${data.wind.speed}</span><span class="windunit">m/s</span>

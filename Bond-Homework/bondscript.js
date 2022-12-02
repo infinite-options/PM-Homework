@@ -22,41 +22,72 @@ const loadButton = document.querySelector("#load");
 const loader = document.querySelector(".loader");
 
 loadButton.addEventListener("click", () => {
-  loader.classList.toggle("hidden");
-  loadButton.classList.toggle("hidden");
+  // loader.classList.toggle("hidden");
+  // console.log("Load button status:", loadButton.classList);
+  // loadButton.classList.toggle("hidden");
+
   setTimeout(() => {
-    console.log("I'm Here 1");
+    fetch(`https://iznfqs92n3.execute-api.us-west-1.amazonaws.com/dev/api/v2/movies`)
+      .then(function (response) {
+        console.log("in bondscript.js - After Fetch");
+        return response.json();
+      })
+      .then(function (data) {
+        console.log("in bondscript.js - Data Received:", data);
+        mainContent.innerHTML = bondCard(data);
+      });
+  }, 10);
 
-    // Declare a function:
-    // const functionName = (parameter to pass in) => {actual function code}
-    async function displayBondData(input) {
-      // const displayData = (input) => {
-      console.log("If there were an input, it would be:", input);
-
-      // function purpose is to get the data from the API
-      // Set up fetch request inside the fuction.  Fetch has a promise so need a .then
-      // Then, once we fullfil the promise and get data in return do the .then and run a new function as a json object
-      fetch(`https://iznfqs92n3.execute-api.us-west-1.amazonaws.com/dev/api/v2/movies`)
-        .then(function (response) {
-          console.log("API reponse - this is not helpful:", response.json);
-          return response.json();
-        })
-
-        // not sure I understand why this function is in .then
-        .then(function (data) {
-          console.log("Data:", data);
-          console.log("Specific Data:", data[0].movie_uid);
-          console.log("Specific Movie:", data[0].director);
-          // bondMovie.innerHTML = data[0].movie_title;
-          // bondActor.innerHTML = data[0].bond_actor;
-          // bondDirector.innerHTML = data[0].director;
-
-          // mainContent.innerHTML = bondCard(data);
-        });
-    }
-
-    displayBondData();
-
-    mainContent.innerHTML = bondCard(data);
-  }, 3000);
+  // setTimeout(() => {
+  //   fetch(`https://iznfqs92n3.execute-api.us-west-1.amazonaws.com/dev/api/v2/movies`)
+  //     .then(function (response) {
+  //       console.log("in bondscript.js - After Fetch");
+  //       return response.json();
+  //     })
+  //     .then(function (data) {
+  //       console.log("in bondscript.js - Data Received:", data);
+  //       mainContent.innerHTML = bondCard(data);
+  //     });
+  // }, 10);
 });
+
+// Original Code
+// loadButton.addEventListener("click", () => {
+//   loader.classList.toggle("hidden");
+//   loadButton.classList.toggle("hidden");
+//   setTimeout(() => {
+//     console.log("I'm Here 1");
+
+//     // Declare a function:
+//     // const functionName = (parameter to pass in) => {actual function code}
+//     async function displayBondData(input) {
+//       // const displayData = (input) => {
+//       console.log("If there were an input, it would be:", input);
+
+//       // function purpose is to get the data from the API
+//       // Set up fetch request inside the fuction.  Fetch has a promise so need a .then
+//       // Then, once we fullfil the promise and get data in return do the .then and run a new function as a json object
+//       fetch(`https://iznfqs92n3.execute-api.us-west-1.amazonaws.com/dev/api/v2/movies`)
+//         .then(function (response) {
+//           console.log("API reponse - this is not helpful:", response.json);
+//           return response.json();
+//         })
+
+//         // not sure I understand why this function is in .then
+//         .then(function (data) {
+//           console.log("Data:", data);
+//           console.log("Specific Data:", data[0].movie_uid);
+//           console.log("Specific Movie:", data[0].director);
+//           // bondMovie.innerHTML = data[0].movie_title;
+//           // bondActor.innerHTML = data[0].bond_actor;
+//           // bondDirector.innerHTML = data[0].director;
+
+//           // mainContent.innerHTML = bondCard(data);
+//         });
+//     }
+
+//     displayBondData();
+
+//     mainContent.innerHTML = bondCard(data);
+//   }, 3000);
+// });
