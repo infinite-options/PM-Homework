@@ -40,6 +40,8 @@ const bondCard = (data) => {
           <link href="loader.css" rel="stylesheet" />
           <span class="loader hidden"> </span>
 
+          <button id="load">Load Bond Info</button>
+
           <div>
             <div>Hello Mr. BondCard</div>
           </div>

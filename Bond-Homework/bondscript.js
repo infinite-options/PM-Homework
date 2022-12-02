@@ -17,9 +17,9 @@ console.log("Setting Info:", settings);
 // const bondDirector = document.querySelector(".getDirector");
 
 //Target the Element you want to work with
-// const mainContent = document.querySelector(".main-content");
-// const loadButton = document.querySelector("#load");
-// const loader = document.querySelector(".loader");
+const mainContent = document.querySelector(".main-content");
+const loadButton = document.querySelector("#load");
+const loader = document.querySelector(".loader");
 
 // // Option 1: Working Code without Timeout using bondCard
 // loadButton.addEventListener("click", () => {
