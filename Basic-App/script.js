@@ -26,7 +26,7 @@ function anotherSimpleFunction() {
 mainContent.innerHTML = advancedCard(data, units);
 console.log("Back in script");
 // console.log("Advanced Card values:", multiplier(10));
-console.log("Advanced Card values:");
+console.log("Advanced Card values:", newVariable);
 
 //Option doing it all in one file -- Green Box
 // mainContent.innerHTML = `
