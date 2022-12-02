@@ -1,0 +1,31 @@
+Figure out buttons
+-- How does on-click work
+-- Main > 03_04b
+-- Working on 'origin/WeatherApp'e970a33
+
+How does a button work?
+1.  In HTML
+<button id="load">Load content</button>
+2.  In script
+const loadButton = document.querySelector("#load");
+loadButton.addEventListener("click", () => { other code here });
+
+
+How do you create an if statment?
+if (condition1) {
+//  block of code to be executed if condition1 is true
+} else if (condition2) {
+//  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+//  block of code to be executed if the condition1 is false and condition2 is false
+}
+
+
+How do you pass variables/data between index.html and script files
+
+Can you have a central script file that acts as a traffic cop
+Do you have to have index.html act as the traffic cop
+
+how do you add delay
+
+How do you turn off/hide the loader
