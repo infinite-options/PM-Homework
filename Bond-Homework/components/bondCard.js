@@ -43,7 +43,7 @@ const bondCard = (data) => {
           <button id="load">Load Bond Info</button>
 
           <div>
-            <div>Hello Mr. BondCard</div>
+            <div>Hello Mr. BondCard 1</div>
           </div>
 
 
